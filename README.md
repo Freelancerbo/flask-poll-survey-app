@@ -1,1 +1,0 @@
-# flask-poll-survey-app
