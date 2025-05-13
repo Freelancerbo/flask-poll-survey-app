@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote Your Opinion!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Polls</h1>
+            <p class="description">Select a poll below to cast your vote!</p>
+        </header>
+
+        <!-- Loop through all the polls -->
+        <div class="poll-list">
+            {% for poll in polls %}
+                <div class="poll-item">
+                    <h2>{{ poll.question }}</h2>
+                    <a href="{{ url_for('show_poll', poll_id=poll.id) }}">Vote</a>
+                </div>
+            {% else %}
+                <p>No polls available.</p>
+            {% endfor %}
+        </div>
+
+        <footer>
+            <p>Made with ❤️ by FreelancerBoy</p>
+        </footer>
+    </div>
+</body>
+</html>

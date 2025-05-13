@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-image: url('https://img1.cgtrader.com/items/4526861/5696201cec/3d-fps-game-environment-low-poly-3d-model-5696201cec.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #e70b0b;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(212, 248, 5, 0.2);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.description {
+    font-size: 14px;
+    color: #0025fa;
+    margin-bottom: 20px;
+}
+
+ul.options-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul.options-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #00bcd4;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 23px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #0097a7;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #bbb;
+}

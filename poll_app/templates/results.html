@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poll Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Results</h1>
+            <p class="description">{{ poll.question }}</p>
+        </header>
+
+        <ul class="results-list">
+            {% for option in poll.options %}
+                <li>
+                    <span class="option-name">{{ option.text }}</span>
+                    <span class="vote-count">{{ option.votes }} vote{{ 's' if option.votes != 1 }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <p class="total-votes">Total Votes: {{ total_votes }}</p>
+
+        <div class="form-actions">
+            <a class="button" href="{{ url_for('index') }}">Back to Poll</a>
+        </div>
+
+        <footer>
+            <p>Made with ❤️ by FreelancerBoy</p>
+        </footer>
+    </div>
+</body>
+</html>

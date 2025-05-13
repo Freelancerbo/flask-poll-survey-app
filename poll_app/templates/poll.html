@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote Your Opinion!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ poll.question }}</h1>
+            <p class="description">Please select your favorite option below and click "Vote" to see the live results.</p>
+        </header>
+
+        <form id="pollForm" method="post" action="{{ url_for('vote', poll_id=poll.id) }}">
+            <ul class="options-list">
+                {% for option in poll.options %}
+                    <li>
+                        <label>
+                            <input type="radio" name="option" value="{{ loop.index0 }}" required>
+                            {{ option.text }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="form-actions">
+                <button type="submit" id="voteBtn">Vote</button>
+            </div>
+        </form>
+
+        <footer>
+            <p>Made with ❤️ by FreelancerBoy</p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('pollForm');
+        const voteBtn = document.getElementById('voteBtn');
+
+        form.addEventListener('submit', function () {
+            voteBtn.disabled = true;
+            alert("Thanks for voting! Redirecting to results...");
+        });
+    </script>
+</body>
+</html>
